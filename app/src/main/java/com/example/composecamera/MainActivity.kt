@@ -1,12 +1,12 @@
 package com.example.composecamera
 
-import android.content.pm.PackageManager
+
 import android.os.Bundle
-import android.util.Log
+
 import androidx.activity.ComponentActivity
-import androidx.activity.compose.rememberLauncherForActivityResult
+
 import androidx.activity.compose.setContent
-import androidx.activity.result.contract.ActivityResultContracts
+
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
@@ -16,8 +16,6 @@ import androidx.compose.runtime.DisposableEffect
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalLifecycleOwner
 import androidx.compose.ui.tooling.preview.Preview
-import androidx.core.app.ActivityCompat
-import androidx.core.content.ContextCompat
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.LifecycleEventObserver
 import com.example.composecamera.ui.theme.ComposeCameraTheme
@@ -70,6 +68,7 @@ fun CameraScreen() {
                     permis.status.isGranted ->
                     {
                         Text(text= "Camera Permission Granted")
+                        CameraView()
                     }
                     permis.status.shouldShowRationale ->
                     {
@@ -85,6 +84,7 @@ fun CameraScreen() {
     }
 
 }
+
 
 
 @Preview(showBackground = true)
